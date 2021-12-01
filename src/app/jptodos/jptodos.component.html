@@ -1,0 +1,25 @@
+<h1>Json Place Holder - Todo Form</h1>
+<form #todoForm="ngForm" (ngSubmit)="addTodo()">
+  User Id : <input type="number" name="id" [(ngModel)]="jptodo.userId" /><br />
+  Id : <input type="number" name="id" [(ngModel)]="jptodo.id" /><br />
+  Title : <input type="text" name="task" [(ngModel)]="jptodo.title" /><br />
+  Completed :
+  <input type="text" name="status" [(ngModel)]="jptodo.completed" /><br />
+  <button type="submit">Add Todo</button>
+</form>
+<hr />
+<h1>Json place holder Todo List</h1>
+<table>
+  <tr>
+    <th>User Id</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Completed</th>
+  </tr>
+  <tr *ngFor="let todo of jptodos">
+    <td>{{ todo.userId }}</td>
+    <td>{{ todo.id }}</td>
+    <td>{{ todo.title }}</td>
+    <td>{{ todo.completed }}</td>
+  </tr>
+</table>
